@@ -9,8 +9,17 @@ Input: 145263 Output: 654321
 Input: 123456789 Output: 987654321
  */
 
+/** ABOUT THE SORT METHOD COMPARE FUNCTION
+ * 
+ * The sort method’s compare function parameter has a simple syntax; it accepts a function that takes two arguments and returns a positive, zero, or negative value. Based on the return value, it will assign a position for each item in the array. If the return value is a negative number, then the sort method knows the first number compared is lower than the second number.
+
+Likewise, if the return value is positive, then the first number is higher, and a return value of zero implies the two values are the same. 
+ */
+
 function descendingOrder(n = 42145) {
-  const numberString = n.toString();
+  const numberString = n.toString().split("");
+  const sortedArray = numberString.sort((a, b) => b - a);
+  return Number(sortedArray.join(""));
 }
 
 console.log(descendingOrder());
